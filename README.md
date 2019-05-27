@@ -16,14 +16,22 @@ Give examples
 ```
 
 ### Installing
+The following libraries are required to run the software:
+* numpy
+* scipy
+* pandas
+* maplotlib
+* nltk
+* sklearn
+* xgboost
+* gensim
+* json
+* re
+* string
+* seaboarn
 
-A step by step series of examples that tell you how to get a development env running
+Additionally the review.json file is needed which can be retrieved from https://www.yelp.com/dataset/.
 
-Say what the step will be
-
-```
-Give the example
-```
 
 And repeat
 
@@ -35,7 +43,7 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+DatasetPruning.ipynb is used to create new .json files containing the desired amount of reviews for the training and testing of the classifiers. The Main.ipynb file is instead used to run and test the classifiers.
 
 ### Break down into end to end tests
 
