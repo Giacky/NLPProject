@@ -6,13 +6,12 @@ The Project is about predicting which star rating any unlabeled review represent
 ## Getting Started
 Download the <x>.ipynb files from the Repository. 
 
+This project has been done in Python version 3.7.3 using the Jupyter Framework
 ### Prerequisites
 
 First of all, the review.json file is needed which can be retrieved from https://www.yelp.com/dataset/. 
 
-```
-Give examples
-```
+
 
 ### Installing
 Install Jupyter Notebook on your Computer
@@ -33,45 +32,65 @@ The following libraries are required to run the software:
 
 install by typing pip install - <x> into the console or conda install in case the Anaconda environment is used 
 
+```
+pip install xgboost
+```
 
 
 
 
 ## Executing the code
-When the review.json file is in the same folder, run 'DatasetPruning.ipynb'  in order to create new .json files containing the desired amount of reviews for the training, validation and testing of the classifiers. The desired amount can be specified the file. 
+When the review.json file is in the same folder, run 'DatasetPruning.ipynb'  in order to create new .json files containing the desired amount of reviews for the training, validation and testing of the classifiers. The desired amount must be specified in the beginning of both 'main.ipynb' and 'DatasetPruning.ipynb' and must be identical:
+
+```
+trainingAmount = 40000
+validationAmount = int(trainingAmount * 0.2)
+testAmount = 10000
+
+```
+
 
 After that, go to the main.ipynb file and execute each code cell from top to bottom.
 
-For example
+For example run this:
 
 ```
-from xgboost import XGBClassifier
-
-best_accuracy = 0
-best_regularization = 0
-
-regularizations = num.linspace(0 , 2 ,  5)
-accuracies = [ ]
-
-for regularization in regularizations:
-    
-    xgbclassifier = XGBClassifier(gamma = regularization, eta = 0.03, num_round = 2,  max_depth = 5, tree_method = 'hist' )
-    xgbclassifier.fit(train_vectors, trainStars)
-    accuracy = xgbclassifier.score(validation_vectors, validationStars)    
-    accuracies.append(accuracy)
-    if accuracy > best_accuracy:
-        best_accuracy = accuracy
-        best_regularization = regularization
-
-    print('best accuracy:' , best_accuracy )
-    print('best regularization parameter (C):' , best_regularization)
-    print('----------------------------------------------------')
-    
-    best_xgbclassifier = XGBClassifier(booster = 'dart', gamma = best_regularization, eta = 0.03, num_round = 2,  max_depth = 5, tree_method = 'hist' )
-    best_xgbclassifier.fit(num.vstack((train_vectors, validation_vectors)), num.hstack((trainStars, validationStars))) 
+import numpy as num
+import scipy as sci
+import pandas as pd
+import matplotlib.pyplot as plt
+import nltk
+import sklearn as skl
+import xgboost
+import gensim
+import json
+import re
+import string
+import seaborn as sns
+from sklearn.metrics import confusion_matrix, classification_report, recall_score
 
 ```
+And then this:
+```
+trainingAmount = 40000
+validationAmount = int(0.2 * trainingAmount)
+testAmount = 10000
 
+# Read JSON files, which are created in 'DatasetPruning' :
+df_train = pd.read_json('training' + str(int(trainingAmount-validationAmount))  +'.json', lines=True)
+df_validation = pd.read_json('validation' + str(validationAmount) +'.json', lines = True)
+df_test = pd.read_json('test' + str(testAmount) +'.json', lines=True)
+
+# Reorder the columns of JSON files:
+df_train = df_train.drop("review_id", axis=1).drop("business_id", axis=1).drop("user_id", axis=1).drop("date", axis=1)
+df_train = df_train.reindex(['text','stars','useful','funny','cool'], axis=1)
+
+df_validation = df_validation.drop("review_id", axis=1).drop("business_id", axis=1).drop("user_id", axis=1).drop("date", axis=1)
+df_validation = df_validation.reindex(['text','stars','useful','funny','cool'], axis=1)
+
+df_test = df_test.drop("review_id", axis=1).drop("business_id", axis=1).drop("user_id", axis=1).drop("date", axis=1)
+df_test = df_test.reindex(['text','stars','useful','funny','cool'], axis=1)
+```
 
 
 ### And coding style tests
