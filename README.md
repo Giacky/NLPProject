@@ -145,7 +145,7 @@ Cumulative Error in Star Prediction of XGBoost:
 
 (add blue and orange area to obtain the new accuracy with margin of error one)
 
-This implies that the classifiers can detect close sentiments well but struggle to discretise into classes which represent similar sentiments. (classes 5 and 4 are close in sentiment, while 5 and 1 are at the opposite spectrum, representing 'very bad' vs. 'very good') 
+This implies that the classifiers can detect close sentiments well, but struggle to discretise into classes which represent similar sentiments. (classes 5 and 4 are close in sentiment, while 5 and 1 are at the opposite spectrum, representing 'very bad' vs. 'very good') 
 
 
 
