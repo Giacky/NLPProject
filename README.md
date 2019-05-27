@@ -1,6 +1,7 @@
-# Project Title
+# Sentiment Analysis by Star Rating Prediction of Yelp Reviews
+(refering to the dataset provided by Yelp for the "Yelp Dataset Challenge") https://www.yelp.com/dataset/challenge
 
-One Paragraph of project description goes here
+The Project is about predicting which star rating any unlabeled review represents. In order to achieve that, we are training a Naive Bayes classifier based on BoW model and Support Vector Machine and XGBoost based on a custom Word2vec model. 80% of the data is for training, 20% hold back for testing. 20% of the training set is used as validation to avoid overfitting. The dimension of these datasets can be customized in the extra file 'DatasetPruning'. 
 
 ## Getting Started
 
