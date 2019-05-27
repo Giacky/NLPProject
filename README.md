@@ -1,48 +1,97 @@
-# Project Title
+# Sentiment Analysis by Star Rating Prediction of Yelp Reviews
+(refering to the dataset provided by Yelp for the "Yelp Dataset Challenge") https://www.yelp.com/dataset/challenge
 
-One Paragraph of project description goes here
+The Project is about predicting which star rating any unlabeled review represents. In order to achieve that, we are training a Naive Bayes classifier based on BoW model and Support Vector Machine and XGBoost based on a custom Word2vec model. 80% of the data is for training, 20% hold back for testing. 20% of the training set is used as validation to avoid overfitting. 
 
 ## Getting Started
+Download the <x>.ipynb files from the Repository. 
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
+This project has been done in Python version 3.7.3 using the Jupyter Framework
 ### Prerequisites
 
-What things you need to install the software and how to install them
+First of all, the review.json file is needed which can be retrieved from https://www.yelp.com/dataset/. 
 
-```
-Give examples
-```
+
 
 ### Installing
+Install Jupyter Notebook on your Computer
 
-A step by step series of examples that tell you how to get a development env running
+The following libraries are required to run the software:
+* numpy
+* scipy
+* pandas
+* maplotlib
+* nltk
+* sklearn
+* xgboost
+* gensim
+* json
+* re
+* string
+* seaboarn
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+install by typing pip install - <x> into the console or conda install in case the Anaconda environment is used 
 
 ```
-Give an example
+pip install xgboost
 ```
+
+
+
+
+## Executing the code
+When the review.json file is in the same folder, run 'DatasetPruning.ipynb'  in order to create new .json files containing the desired amount of reviews for the training, validation and testing of the classifiers. The desired amount must be specified in the beginning of both 'main.ipynb' and 'DatasetPruning.ipynb' and must be identical:
+
+```
+trainingAmount = 40000
+validationAmount = int(trainingAmount * 0.2)
+testAmount = 10000
+
+```
+
+
+After that, go to the main.ipynb file and execute each code cell from top to bottom.
+
+For example run this:
+
+```
+import numpy as num
+import scipy as sci
+import pandas as pd
+import matplotlib.pyplot as plt
+import nltk
+import sklearn as skl
+import xgboost
+import gensim
+import json
+import re
+import string
+import seaborn as sns
+from sklearn.metrics import confusion_matrix, classification_report, recall_score
+
+```
+And then this:
+```
+trainingAmount = 40000
+validationAmount = int(0.2 * trainingAmount)
+testAmount = 10000
+
+# Read JSON files, which are created in 'DatasetPruning' :
+df_train = pd.read_json('training' + str(int(trainingAmount-validationAmount))  +'.json', lines=True)
+df_validation = pd.read_json('validation' + str(validationAmount) +'.json', lines = True)
+df_test = pd.read_json('test' + str(testAmount) +'.json', lines=True)
+
+# Reorder the columns of JSON files:
+df_train = df_train.drop("review_id", axis=1).drop("business_id", axis=1).drop("user_id", axis=1).drop("date", axis=1)
+df_train = df_train.reindex(['text','stars','useful','funny','cool'], axis=1)
+
+df_validation = df_validation.drop("review_id", axis=1).drop("business_id", axis=1).drop("user_id", axis=1).drop("date", axis=1)
+df_validation = df_validation.reindex(['text','stars','useful','funny','cool'], axis=1)
+
+df_test = df_test.drop("review_id", axis=1).drop("business_id", axis=1).drop("user_id", axis=1).drop("date", axis=1)
+df_test = df_test.reindex(['text','stars','useful','funny','cool'], axis=1)
+```
+
 
 ### And coding style tests
 
