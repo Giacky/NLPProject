@@ -22,6 +22,7 @@ The following libraries are required to run the software:
 * scipy
 * pandas
 * maplotlib
+* seaboarn
 * nltk
 * sklearn
 * xgboost
@@ -29,7 +30,7 @@ The following libraries are required to run the software:
 * json
 * re
 * string
-* seaboarn
+
 
 install by typing pip install - <x> into the console or conda install in case the Anaconda environment is used 
 
@@ -93,8 +94,12 @@ df_test = df_test.drop("review_id", axis=1).drop("business_id", axis=1).drop("us
 df_test = df_test.reindex(['text','stars','useful','funny','cool'], axis=1)
 ```
 
+## Description of implemented classifiers
 
-
+-Naïve Bayes Classifier is a well known probabilistic classifier. MultinominalNB is imported from the sklearn library as 'classifierNB'
+-XGBoost is a regression tree booster. XGBClassifier is imported from the xgboost library as 'xgbclassifier'
+-Support Vector Machine is a well known non-probabilistic binary linear classifier making use of multidimensional Kernels.
+SVC is imported from the sklearn library as 'svc'
 
 ### Running the classifiers
 
@@ -103,20 +108,20 @@ The main part of the code is the running of the classifiers themselves. Below a 
 ![code_execution](https://github.com/Giacky/NLPProject/blob/master/figs/code_execution.png)
 
 #### Troubleshooting
-While testing the error message 'The Kernel appears to have died' frequently appeared. It most likely is caused by an overload of memory usage of the RAM. Executing each of the computationally expensive code cells after the previous has been executed solved this problem however. 
+While testing the error message 'The Kernel appears to have died' frequently appeared. It most likely is caused by an overload of memory usage of the RAM. Executing each of the computationally expensive code cells after the previous one has been run solved this problem however. 
 
 ## Visualising results 
-A
+Interpreting results is best done with having some kind of visualisation of our retrieved results. This is achieved with the libraries matplotlib and seaboarn. Execute the corresponding code segments only after the classifiers. 
 
-## Built With
+Examples:
+The distribution of classes among the dataset:
+https://github.com/Giacky/NLPProject/blob/master/figs/rating_distribution.png
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+When comparing the obtained normalised confusion matrix for the Support Vector Machine and XGBoost, one can clearly see that 
 
-## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+
 
 ## Authors
 
