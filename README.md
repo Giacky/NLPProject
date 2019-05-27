@@ -134,6 +134,21 @@ Confusion Matrix for XGBoost:
 
 ![figure3](https://github.com/Giacky/NLPProject/blob/master/figs/cm_xgb_p.png)
 
+
+
+Another finding was that while the accuracy scores of around 60% (60 % for NB, 62,72 % for XGBoost and 62,93%) do not sound particulary good, when analysing accuracy with a margin of error of one star, all models reach an accuracy of around 90%:
+
+Cumulative Error in Star Prediction of XGBoost:
+
+
+![figure4](https://github.com/Giacky/NLPProject/blob/master/figs/bar_xgb.png)
+
+(add blue and orange area to obtain the new accuracy with margin of error one)
+
+This implies that the classifiers can detect close sentiments well but struggle to discretise into classes which represent similar sentiments. (classes 5 and 4 are close in sentiment, while 5 and 1 are at the opposite spectrum, representing 'very bad' vs. 'very good') 
+
+
+
 ## Authors
 
 * **Hendrik Baacke** - [PurpleBooth](https://github.com/HendrikSimons)
@@ -147,4 +162,4 @@ This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* We want to acknowledge nobody, we are alone, the world is evil and only darkness is awaiting us in an infinitely deep abyss
+* We want to acknowledge nobody, we are alone, the world is evil and only darkness is awaiting us in an infinitely deep abyss  ..and there is no god
