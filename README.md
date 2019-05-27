@@ -94,6 +94,9 @@ df_test = df_test.reindex(['text','stars','useful','funny','cool'], axis=1)
 ![Image of Yaktocat]
 (https://github.com/Giacky/NLPProject/blob/master/figs/code_execution.png)
 
+![GitHub Logo]
+Format: ![Alt Text](https://github.com/Giacky/NLPProject/blob/master/figs/code_execution.png)
+
 ### And coding style tests
 
 Explain what these tests test and why
