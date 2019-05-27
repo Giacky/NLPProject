@@ -91,11 +91,9 @@ df_validation = df_validation.reindex(['text','stars','useful','funny','cool'], 
 df_test = df_test.drop("review_id", axis=1).drop("business_id", axis=1).drop("user_id", axis=1).drop("date", axis=1)
 df_test = df_test.reindex(['text','stars','useful','funny','cool'], axis=1)
 ```
-![Image of Yaktocat]
-(https://github.com/Giacky/NLPProject/blob/master/figs/code_execution.png)
 
-![GitHub Logo]
-Format: ![Alt Text](https://github.com/Giacky/NLPProject/blob/master/figs/code_execution.png)
+
+![code_execution](https://github.com/Giacky/NLPProject/blob/master/figs/code_execution.png)
 
 ### And coding style tests
 
