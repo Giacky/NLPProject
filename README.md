@@ -154,7 +154,6 @@ This implies that the classifiers can detect close sentiments well, but struggle
 * **Hendrik Baacke** - [GitHub](https://github.com/HendrikSimons)
 * **Giacomo Anerdi** - [GitHub](https://github.com/Giacky)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
