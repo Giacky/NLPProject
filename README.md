@@ -151,8 +151,8 @@ This implies that the classifiers can detect close sentiments well, but struggle
 
 ## Authors
 
-* **Hendrik Baacke** - [PurpleBooth](https://github.com/HendrikSimons)
-* **Giacomo Anerdi** - [PurpleBooth](https://github.com/Giacky)
+* **Hendrik Baacke** - [GitHub](https://github.com/HendrikSimons)
+* **Giacomo Anerdi** - [GitHub](https://github.com/Giacky)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
