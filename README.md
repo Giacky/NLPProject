@@ -42,11 +42,37 @@ When the review.json file is in the same folder, run 'DatasetPruning.ipynb'  in 
 
 After that, go to the main.ipynb file and execute each code cell from top to bottom.
 
-Each code 
+For example
 
 ```
-Give an example
+from xgboost import XGBClassifier
+
+best_accuracy = 0
+best_regularization = 0
+
+regularizations = num.linspace(0 , 2 ,  5)
+accuracies = [ ]
+
+for regularization in regularizations:
+    
+    xgbclassifier = XGBClassifier(gamma = regularization, eta = 0.03, num_round = 2,  max_depth = 5, tree_method = 'hist' )
+    xgbclassifier.fit(train_vectors, trainStars)
+    accuracy = xgbclassifier.score(validation_vectors, validationStars)    
+    accuracies.append(accuracy)
+    if accuracy > best_accuracy:
+        best_accuracy = accuracy
+        best_regularization = regularization
+
+    print('best accuracy:' , best_accuracy )
+    print('best regularization parameter (C):' , best_regularization)
+    print('----------------------------------------------------')
+    
+    best_xgbclassifier = XGBClassifier(booster = 'dart', gamma = best_regularization, eta = 0.03, num_round = 2,  max_depth = 5, tree_method = 'hist' )
+    best_xgbclassifier.fit(num.vstack((train_vectors, validation_vectors)), num.hstack((trainStars, validationStars))) 
+
 ```
+
+
 
 ### And coding style tests
 
