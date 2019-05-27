@@ -115,7 +115,7 @@ Interpreting results is best done with having some kind of visualisation of our 
 
 Examples:
 The distribution of classes among the dataset:
-https://github.com/Giacky/NLPProject/blob/master/figs/rating_distribution.png
+![figure1](https://github.com/Giacky/NLPProject/blob/master/figs/rating_distribution.png)
 
 When comparing the obtained normalised confusion matrix for the Support Vector Machine and XGBoost, one can clearly see that 
 
