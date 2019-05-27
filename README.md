@@ -93,11 +93,14 @@ df_test = df_test.reindex(['text','stars','useful','funny','cool'], axis=1)
 ```
 
 
+
+
+### Running the classifiers
+
+The main part of the code is the running of the classifiers themselves. Below a run of the XGBoost classifier is presented to give an intuition of how it should look when executed correctly. The number in percent refers to the accuracy of the specific classifier over the test set:
+
 ![code_execution](https://github.com/Giacky/NLPProject/blob/master/figs/code_execution.png)
 
-### And coding style tests
-
-Explain what these tests test and why
 
 ```
 Give an example
