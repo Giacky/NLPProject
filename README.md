@@ -7,7 +7,8 @@ The Project is about predicting which star rating any unlabeled review represent
 Download the <x>.ipynb files from the Repository. 
 
 This project has been done in Python version 3.7.3 using the Jupyter Framework
-### Prerequisites
+
+## Prerequisites
 
 First of all, the review.json file is needed which can be retrieved from https://www.yelp.com/dataset/. 
 
@@ -97,18 +98,15 @@ df_test = df_test.reindex(['text','stars','useful','funny','cool'], axis=1)
 
 ### Running the classifiers
 
-The main part of the code is the running of the classifiers themselves. Below a run of the XGBoost classifier is presented to give an intuition of how it should look when executed correctly. The number in percent refers to the accuracy of the specific classifier over the test set:
+The main part of the code is the running of the classifiers themselves. Below a run of the XGBoost classifier is presented to give an intuition of how it should look when executed correctly. The number in percent refers to the accuracy of the specific classifier over the test set. Multiple runs are performed in XGBoost and SVM to tune hyperparameters and mitigate overfitting. The BoW Naive Bayes is less complicated and should compute in a shorter time than the other two.
 
 ![code_execution](https://github.com/Giacky/NLPProject/blob/master/figs/code_execution.png)
 
+#### Troubleshooting
+While testing the error message 'The Kernel appears to have died' frequently appeared. It most likely is caused by an overload of memory usage of the RAM. Executing each of the computationally expensive code cells after the previous has been executed solved this problem however. 
 
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+## Visualising results 
+A
 
 ## Built With
 
@@ -120,22 +118,17 @@ Add additional notes about how to deploy this on a live system
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Hendrik Baacke** - [PurpleBooth](https://github.com/HendrikSimons)
+* **Giacomo Anerdi** - [PurpleBooth](https://github.com/Giacky)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md) file for details  
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* We want to acknowledge nobody, we are alone, the world is evil and only darkness is awaiting us in an infinitely deep abyss
