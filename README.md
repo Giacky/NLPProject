@@ -113,7 +113,7 @@ While testing the error message 'The Kernel appears to have died' frequently app
 ## Visualising results 
 Interpreting results is best done with having some kind of visualisation of our retrieved results. This is achieved with the libraries matplotlib and seaboarn. Execute the corresponding code segments only after the classifiers. 
 
-Examples:
+
 The distribution of classes among the dataset:
 
 ![figure1](https://github.com/Giacky/NLPProject/blob/master/figs/rating_distribution.png)
@@ -122,14 +122,14 @@ The distribution of classes among the dataset:
 When comparing the obtained normalised confusion matrix for the Support Vector Machine and XGBoost, one can clearly see that 
 the SVM classifier overfits the training set and its distribution of labels more than XGBoost:
 
-Confusion Matrix for SVM:
+Normalised Confusion Matrix for SVM:
 
 
 ![figure2](https://github.com/Giacky/NLPProject/blob/master/figs/cm_svm_p.png)
 
 
 
-Confusion Matrix for XGBoost:
+Normalised Confusion Matrix for XGBoost:
 
 
 ![figure3](https://github.com/Giacky/NLPProject/blob/master/figs/cm_xgb_p.png)
