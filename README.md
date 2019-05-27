@@ -1,21 +1,22 @@
 # Sentiment Analysis by Star Rating Prediction of Yelp Reviews
 (refering to the dataset provided by Yelp for the "Yelp Dataset Challenge") https://www.yelp.com/dataset/challenge
 
-The Project is about predicting which star rating any unlabeled review represents. In order to achieve that, we are training a Naive Bayes classifier based on BoW model and Support Vector Machine and XGBoost based on a custom Word2vec model. 80% of the data is for training, 20% hold back for testing. 20% of the training set is used as validation to avoid overfitting. The dimension of these datasets can be customized in the extra file 'DatasetPruning'. 
+The Project is about predicting which star rating any unlabeled review represents. In order to achieve that, we are training a Naive Bayes classifier based on BoW model and Support Vector Machine and XGBoost based on a custom Word2vec model. 80% of the data is for training, 20% hold back for testing. 20% of the training set is used as validation to avoid overfitting. 
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Download the <x>.ipynb files from the Repository. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+First of all, the review.json file is needed which can be retrieved from https://www.yelp.com/dataset/. 
 
 ```
 Give examples
 ```
 
 ### Installing
+Install Jupyter Notebook on your Computer
+
 The following libraries are required to run the software:
 * numpy
 * scipy
@@ -30,24 +31,18 @@ The following libraries are required to run the software:
 * string
 * seaboarn
 
-Additionally the review.json file is needed which can be retrieved from https://www.yelp.com/dataset/.
+install by typing pip install - <x> into the console or conda install in case the Anaconda environment is used 
 
 
-And repeat
 
-```
-until finished
-```
 
-End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Executing the code
+When the review.json file is in the same folder, run 'DatasetPruning.ipynb'  in order to create new .json files containing the desired amount of reviews for the training, validation and testing of the classifiers. The desired amount can be specified the file. 
 
-DatasetPruning.ipynb is used to create new .json files containing the desired amount of reviews for the training and testing of the classifiers. The Main.ipynb file is instead used to run and test the classifiers.
+After that, go to the main.ipynb file and execute each code cell from top to bottom.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
+Each code 
 
 ```
 Give an example
