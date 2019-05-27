@@ -1,6 +1,7 @@
-# Project Title
+# Sentiment Analysis by Star Rating Prediction of Yelp Reviews
+(refering to the dataset provided by Yelp for the "Yelp Dataset Challenge") https://www.yelp.com/dataset/challenge
 
-One Paragraph of project description goes here
+The Project is about predicting which star rating any unlabeled review represents. In order to achieve that, we are training a Naive Bayes classifier based on BoW model and Support Vector Machine and XGBoost based on a custom Word2vec model. 80% of the data is for training, 20% hold back for testing. 20% of the training set is used as validation to avoid overfitting. The dimension of these datasets can be customized in the extra file 'DatasetPruning'. 
 
 ## Getting Started
 
@@ -8,26 +9,33 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-The following libraries are required to run the software:
-* numpy
-* scipy
-* pandas
-* maplotlib
-* nltk
-* sklearn
-* xgboost
-* gensim
-* json
-* re
-* string
-* seaboarn
+What things you need to install the software and how to install them
 
-Additionally the review.json file is needed which can be retrieved from https://www.yelp.com/dataset/.
+```
+Give examples
+```
 
+### Installing
+
+A step by step series of examples that tell you how to get a development env running
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
-DatasetPruning.ipynb is used to create new .json files containing the desired amount of reviews for the training and testing of the classifiers. The Main.ipynb file is instead used to run and test the classifiers.
 
+Explain how to run the automated tests for this system
 
 ### Break down into end to end tests
 
