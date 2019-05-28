@@ -161,4 +161,4 @@ This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* We want to acknowledge nobody, we are alone, the world is evil and only darkness is awaiting us in an infinitely deep abyss  ..and there is no god
+* We want to acknowledge nobody.
